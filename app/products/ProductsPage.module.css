@@ -1,0 +1,47 @@
+/* Container for all product cards */
+.products-container {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 32px;
+	padding: 32px;
+	justify-items: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+	.products-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+	.products-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Loading and Error Messages */
+.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+.spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border-top-color: #333;
+	animation: spin 1s ease-in-out infinite;
+	margin-bottom: 20px;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
